@@ -5,6 +5,7 @@
  *      Author: song
  */
 #include <iostream>
+#include<assert.h>
 #include "copyconstructorfunction.h"
 
 namespace std {
@@ -34,4 +35,35 @@ void copy_constructor_function::show(){
 	cout << a << endl;
 }
 
+
+
+deep_copy_constructor_function::deep_copy_constructor_function(){
+	cout << "拷贝构造函数:深拷贝，构造函数" << endl;
+	p=new int(100);
+}
+
+deep_copy_constructor_function::~deep_copy_constructor_function(){
+	assert(p!=NULL);
+	delete p;
+	cout << "拷贝构造函数:深拷贝，析构函数" << endl;
+}
+
+deep_copy_constructor_function::deep_copy_constructor_function(const deep_copy_constructor_function & c)
+{
+	cout << "拷贝构造函数:深拷贝，拷贝构造函数" << endl;
+	weight =c.weight;
+	hight= c.hight;
+	p=new int(100);
+	*p=*(c.p);
+}
+
+
+
+
 } /* namespace std */
+
+
+
+
+
+

@@ -25,6 +25,25 @@ public:
 	void show();
 };
 
+
+
+class deep_copy_constructor_function {
+private:
+	int weight;
+	int hight;
+	int * p;
+
+public:
+	//构造函数
+	deep_copy_constructor_function();
+	//析构函数
+	virtual ~deep_copy_constructor_function();
+	//拷贝构造函数
+	deep_copy_constructor_function(const deep_copy_constructor_function & c);
+
+	void show();
+};
+
 } /* namespace std */
 
 #endif /* COPYCONSTRUCTORFUNCTION_H_ */
