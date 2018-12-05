@@ -17,7 +17,9 @@
  */
 
 #define  normal_multiple_inheritance_no_virtual_function 0
-#define  normal_rhombus_inheritance_no_virtual_function 1
+#define  normal_rhombus_inheritance_no_virtual_function 0
+#define  normal_multiple_inheritance_with_virtual_function 0
+#define  virtual_multiple_inheritance_with_virtual_function 1
 
 namespace std {
 
@@ -104,10 +106,93 @@ public :
 #endif
 
 
+#if normal_multiple_inheritance_with_virtual_function
+
+class Base1
+{ public:
+	int base1;
+	Base1(int a=2):base1(a){}
+	virtual void fun1()
+	{
+		cout << "base1::base1="<<base1<<endl;
+	}
+};
+
+class Base2
+{public:
+	int base2;
+	Base2(int a=3):base2(a){}
+	virtual void fun2()
+	{
+		cout <<"base2::base2="<<base2<<endl;
+	}
+
+};
+
+class Derive:public Base1,public Base2
+{
+public:
+	int derive;
+	Derive(int a=4):derive(a){}
+	virtual void fun3()
+	{
+		cout <<"derive::derive="<<derive<<endl;
+	}
+	virtual void fun2() //重写基类函数
+	{
+		cout << "derive::fun2 derive ="<<derive <<endl;
+	}
+};
+#endif
+
+#if normal_rhombus_inheritance_with_virtual_function
 
 
+#endif
 
+#if virtual_multiple_inheritance_with_virtual_function
 
+class Base1
+{
+public:
+	int base1;
+	Base1(int a=1):base1(a){}
+	virtual void fun1()
+	{
+		cout << "base1::base="<<base1<<endl;
+	}
+};
+
+class Base2
+{
+public:
+	int base2;
+	Base2(int a=2):base2(a){}
+	virtual void fun2()
+	{
+		cout <<"base2::base2="<<base2<<endl;
+	}
+};
+
+class Derive:virtual public Base1,virtual public Base2
+{
+public:
+	int derive;
+	Derive(int a=3):derive(a){}
+	virtual void fun3()
+	{
+		cout <<"Derive:derive"<<derive<<endl;
+	}
+	virtual void fun2()
+	{
+		cout <<"Derive::base2="<<base2<<endl;
+	}
+	virtual void fun1()
+	{
+		cout << "Derive::base="<<base1<<endl;
+	}
+};
+#endif
 
 
 
