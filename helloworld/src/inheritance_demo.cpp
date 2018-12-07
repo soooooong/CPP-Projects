@@ -19,7 +19,7 @@
 #define  normal_multiple_inheritance_no_virtual_function 0
 #define  normal_rhombus_inheritance_no_virtual_function 0
 #define  normal_multiple_inheritance_with_virtual_function 0
-#define  virtual_multiple_inheritance_with_virtual_function 1
+#define  virtual_multiple_inheritance_with_virtual_function 0
 
 namespace std {
 

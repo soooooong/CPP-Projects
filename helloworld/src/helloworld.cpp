@@ -10,6 +10,8 @@
 #include "inheritance_demo.cpp"
 #include "copyconstructorfunction.h"
 #include "function_overload.h"
+#include "operator_overloading.cpp"
+#include "operator_overloading.h"
 using namespace std;
 
 int main() {
@@ -75,5 +77,32 @@ int main() {
 	test_inheritance_2.fun3();
 #endif
 
+#if operator_overloading_define
+
+	box box1;
+	box box2;
+	box box3;
+	double vol=0.0;
+
+	box1.setlength(6.0);
+	box1.setbreadth(7.0);
+	box1.setheight(5.0);
+
+	box2.setlength(12.0);
+	box2.setbreadth(13.0);
+	box2.setheight(10.0);
+
+	vol=box1.getvolume();
+	cout<<"box1.vol="<<vol<<endl;
+
+	vol=box2.getvolume();
+	cout<<"box2.vol="<<vol<<endl;
+
+	//operator_overloading
+	box3 = box1+box2;
+	vol=box3.getvolume();
+	cout << "Volume of Box3 : " << vol <<endl;
+
+#endif
 	return 0;
 }
