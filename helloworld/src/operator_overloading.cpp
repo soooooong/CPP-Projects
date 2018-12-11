@@ -9,7 +9,7 @@
 #include "operator_overloading.h"
 
 
-#define operator_overloading_define 1
+#define operator_overloading_define 0
 #if operator_overloading_define
 namespace std {
 
